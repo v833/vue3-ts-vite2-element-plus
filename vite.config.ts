@@ -13,6 +13,6 @@ export default defineConfig({
       '@c': '@/components',
       '@v': '@/views',
     },
-    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', 'vue'],
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
   },
 })
