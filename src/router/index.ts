@@ -3,6 +3,7 @@ import Home from '@v/Home.vue'
 import Container from '@c/container/src/index.vue'
 import ChooseIcon from '@v/chooseIcon/index.vue'
 import ChooseArea from '@v/chooseArea/index.vue'
+import Trend from '@v/trend/index.vue'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
@@ -23,6 +24,11 @@ const routes: RouteRecordRaw[] = [
         path: '/choose-area',
         name: 'ChooseArea',
         component: ChooseArea,
+      },
+      {
+        path: '/trend',
+        name: 'Trend',
+        component: Trend,
       },
     ],
   },
