@@ -24,10 +24,12 @@ const data = [
       {
         name: '3-3',
         index: '3-3',
+        icon: 'menu',
         children: [
           {
             name: '3-3-3',
             index: '3-3-3',
+            icon: 'menu',
           },
         ],
       },

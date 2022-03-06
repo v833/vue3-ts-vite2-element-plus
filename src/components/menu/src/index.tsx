@@ -13,7 +13,6 @@ export default defineComponent({
   },
   setup(props) {
     const attrs = useAttrs()
-    console.log('attrs: ', attrs)
     const renderMenu = (data: MenuItem[]) => {
       return data.map((item: MenuItem) => {
         const icon = `el-icon-${item.icon}`
@@ -21,7 +20,9 @@ export default defineComponent({
           title: () => {
             return (
               <div>
-                {item.icon ? h(resolveComponent(icon)) : ''}
+                {item.icon && item.children && item.children.length
+                  ? h(resolveComponent(icon))
+                  : ''}
                 <span>{item.name}</span>
               </div>
             )
@@ -34,7 +35,11 @@ export default defineComponent({
             </el-sub-menu>
           )
         } else {
-          return <el-menu-item index={item.index} v-slots={slots}></el-menu-item>
+          return (
+            <el-menu-item index={item.index} v-slots={slots}>
+              {item.icon ? h(resolveComponent(icon)) : ''}
+            </el-menu-item>
+          )
         }
       })
     }
@@ -42,7 +47,7 @@ export default defineComponent({
       return (
         <el-menu
           defaultActive={props.defaultActive}
-          style="width: 200px; height: auto"
+          style="height: auto"
           class="el-menu-demo"
           {...attrs}
         >
