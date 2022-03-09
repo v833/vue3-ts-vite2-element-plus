@@ -13,3 +13,6 @@ Object.keys(Icons).forEach((icon) => {
 })
 
 app.use(ElementPlus).use(router).use(qui).mount('#app')
+// app.config.errorHandler = (e) => {
+//   window.open('https://www.baidu.com/#ie=UTF-8&wd=1')
+// }
